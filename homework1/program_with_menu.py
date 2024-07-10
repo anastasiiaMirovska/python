@@ -65,7 +65,7 @@ def multiplication_table():
         i = 1
         number_array = []
         while i <= 9:
-            number_array.append(f"{number * i:3}")  # Форматуємо числа з вирівнюванням по 2 символи
+            number_array.append(f"{number * i:3}")  # Форматуємо числа з вирівнюванням по 3 символи
             i += 1
         print(" ".join(number_array))
         number += 1
