@@ -1,13 +1,13 @@
 def notebook():
     todo_list: list[str] = []
 
-    def add_todo(todo: str):
+    def add_todo(todo: str) -> None:
         nonlocal todo_list
         todo_list.append(todo)
 
-    def get_all():
+    def get_all() -> list[str]:
         nonlocal todo_list
-        return todo_list
+        return todo_list.copy()
 
     return add_todo, get_all
 

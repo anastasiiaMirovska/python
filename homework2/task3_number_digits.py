@@ -4,7 +4,8 @@ def expanded_form(number: str | int):
     numbers: list[str] = list()
     length = len(number)
     for i in range(length):
-        numbers.append(number[i]+"0"*(length-i-1))
+        if number[i]!="0":
+            numbers.append(number[i]+"0"*(length-i-1))
     print(" + ".join(numbers))
 
 expanded_form(True)
@@ -23,9 +24,10 @@ def expanded_form_better(number: str | int):
         number = str(number)
         numbers: list[str] = list()
         length = len(number)
-        for i in range(length):
-            numbers.append(number[i]+"0"*(length-i-1))
-        print(" + ".join(numbers))
+        for i, char in enumerate(number):
+            if char != "0":
+                numbers.append(char+"0"*(length-i-1))
+        print(f"{" + ".join(numbers)} = {number}")
 
 
-expanded_form_better(True)
+expanded_form_better(7036)
