@@ -8,7 +8,7 @@ def expanded_form(number: str | int):
             numbers.append(number[i]+"0"*(length-i-1))
     print(" + ".join(numbers))
 
-expanded_form(True)
+expanded_form(70)
 
 
 # Покращена версія:
