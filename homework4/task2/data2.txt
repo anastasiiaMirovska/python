@@ -1,0 +1,8 @@
+3 apple4 45 
+4 kiwi 340 
+1 apple 37 
+6 strawberry 209 
+2 banana 430 
+37 tomato 438 
+1 apple 43 
+5 pen 456 
