@@ -1,11 +1,3 @@
-my_type = list[list[{"id":int, "field":{}}]]
-res = list()
-# def go_through(my_data:my_type):
-#     for l in my_data:
-#         for item in l:
-#             if not item["id"] in res:
-#                 res.append(item["id"])
-
 data = [
     [
         {"id": 1110, "field": {}},
@@ -33,6 +25,7 @@ data = [
     ]
 ]
 
+
 def go_through(my_data):
     for item in my_data:
         yield item["id"]
@@ -40,9 +33,26 @@ def go_through(my_data):
 
 g1 = go_through(data[0])
 g2 = go_through(data[1])
-g3 = go_through(data[0])
+g3 = go_through(data[2])
 
-list = [g1, g2,g3]
+list = [g1, g2, g3]
+res = []
+
 while list:
-    item = list.pop(0)
 
+    item = list.pop(0)
+    try:
+        proceed = True
+        while proceed:
+            element = next(item)
+            if element in res:
+                continue
+            else:
+                res.append(element)
+                list.append(item)
+                proceed = False
+
+    except StopIteration:
+        pass
+
+print(res)

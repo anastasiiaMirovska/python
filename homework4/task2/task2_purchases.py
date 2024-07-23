@@ -113,7 +113,7 @@ class NoteBook:
             query = input("Enter the query: ")
             for number, note in enumerate(self.__notes_list):
                 if query == note['id'] or query == note['name'] or query == note['price']:
-                    print(f"Purchase: id-{note['id']} - {note['name']} - {note['price']} UAH")
+                    print(f"Purchase: id - {note['id']} - {note['name']} - {note['price']} UAH")
 
     @dashed_decor
     def __menu(self):
